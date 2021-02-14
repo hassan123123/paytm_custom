@@ -168,10 +168,10 @@ extension SwiftAllInOneSdkPlugin: AIDelegate {
 
         public func openPaymentWebVC(_ controller: UIViewController?) {
             print("Response2")
-            controller?.isModalInPopover = false
-            if #available(iOS 13, *) {controller?.isModalInPresentation = true}
+            //controller?.isModalInPopover = false
+            //if #available(iOS 13, *) {controller?.isModalInPresentation = true}
             if let vc = controller {
-                
+                vs.modalPresentationStyle = .fullScreen
                 DispatchQueue.main.async {
                     UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
                 }
