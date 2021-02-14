@@ -171,7 +171,7 @@ extension SwiftAllInOneSdkPlugin: AIDelegate {
             //controller?.isModalInPopover = false
             //if #available(iOS 13, *) {controller?.isModalInPresentation = true}
             if let vc = controller {
-                vs.modalPresentationStyle = .fullScreen
+                vc.modalPresentationStyle = .fullScreen
                 DispatchQueue.main.async {
                     UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true, completion: nil)
                 }
