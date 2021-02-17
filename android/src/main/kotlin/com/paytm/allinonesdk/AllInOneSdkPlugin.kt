@@ -146,7 +146,7 @@ public class AllInOneSdkPlugin : FlutterPlugin, ActivityResultListener, MethodCa
         transactionManager.startTransaction(activity!!, REQ_CODE)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent): Boolean {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
         if (requestCode == REQ_CODE && data != null) {
             val message = data.getStringExtra("nativeSdkForMerchantMessage")
             val response = data.getStringExtra("response")
