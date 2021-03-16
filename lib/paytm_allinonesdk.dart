@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 class AllInOneSdk {
   static const MethodChannel _channel = const MethodChannel('allinonesdk');
 
-  static Future<Map<dynamic, dynamic>> startTransaction(
+  static Future<Map<dynamic, dynamic>?> startTransaction(
       String mid,
       String orderId,
       String amount,
@@ -22,7 +22,7 @@ class AllInOneSdk {
       "isStaging": isStaging,
       "restrictAppInvoke": restrictAppInvoke
     };
-    Map<dynamic, dynamic> version =
+    Map<dynamic, dynamic>? version =
         await _channel.invokeMethod('startTransaction', sendMap);
     return version;
   }
